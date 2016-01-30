@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    public float MoveSpeed = 1; // This is temporary
+    private const float MoveSpeed = 0; // This is temporary
 
     private const float JumpVelocity = 15;
     private const float FallVelocity = -20;
@@ -18,11 +18,12 @@ public class PlayerCharacter : MonoBehaviour
     private enum CharacterState { Running, Jumping, Falling, Sliding, Dancing }
     private CharacterState _currentState = CharacterState.Running;
 
-    private HashSet<Collision> _currentCollisions = new HashSet<Collision>();
+    private HashSet<Collision2D> _currentCollisions = new HashSet<Collision2D>();
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -31,7 +32,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) StartJump(); // Temporary
 
-        // This horizontal movement segment is temporary. 
+        // This horizontal movement segment is temporary.
         // Normally the character should not move much horizontally unless he gets knocked down and to the left due to a fail, 
         // or when he get some kind of boost as a reward for success.
         Vector2 v = _rigidbody.velocity;
@@ -56,7 +57,7 @@ public class PlayerCharacter : MonoBehaviour
     public void StartJump()
     {
         // For the jump, we want to change direction instantly, so instead of using forces over time, we directly adjust velocity.
-        if (_grounded)
+        // if (IsGrounded)
         {
             // Change state
             _currentState = CharacterState.Jumping;
@@ -69,13 +70,14 @@ public class PlayerCharacter : MonoBehaviour
             // Play Sound
             // TODO
             // Play Animation
-            _animator.Play("jump");
+            _animator.Play("jumping");
+            Debug.Log("JUMPED");
         }
     }
 
     public void StartSlide()
     {
-        if (_grounded)
+        if (IsGrounded)
         {
             // Change state
             _currentState = CharacterState.Sliding;
@@ -84,13 +86,13 @@ public class PlayerCharacter : MonoBehaviour
             // Play Sound
             // TODO
             // Play Animation
-            _animator.Play("slide");
+            _animator.Play("sliding");
         }
     }
 
+    public bool IsGrounded { get { return _currentCollisions.Count > 0; } }
 
-
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         // Keeping track of the currently active collisions is simple way to determine if our character is currently grounded or not,
         // A large flaw of this method is that a head-on collision against a wall will also count as being grounded.
@@ -100,12 +102,11 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(Collision collisionInfo)
+    void OnCollisionStay2D(Collision2D collisionInfo)
     {
-        _grounded = true;
     }
 
-    void OnCollisionExit(Collision collisionInfo)
+    void OnCollisionExit2D(Collision2D collisionInfo)
     {
         if (_currentCollisions.Contains(collisionInfo))
         {
