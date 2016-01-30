@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class PlayerData : MonoBehaviour {
+public class PlayerData {
 
     public int playerID = 0;
     public List<Challenge> challenges;
