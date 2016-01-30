@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedGameObject: {fileID: 141178}
   xOffset: 2
-  requiredInput: 0
+  requiredInput: 1
   timeLeftUntilInput: 0
   timeLeftUntilJudgment: 0.5
   cleared: 0
@@ -553,6 +553,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: requiredInput
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

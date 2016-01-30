@@ -5,10 +5,15 @@ public class GameLoopManager : MonoBehaviour {
 
     const float CHALLENGE_REMOVAL_LIMIT = 5f;
 
+    public Loki loki;
+
     public int playerCount = 4;
     public List<PlayerData> playerDatas;
     public float movementPerSecond = 4f;
     bool running = false;
+
+    private int combo = 0;
+    private int happyCombo = 15; //The required combo to make Loki happy
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +50,12 @@ public class GameLoopManager : MonoBehaviour {
                         {
                             if (challenge.timeLeftUntilJudgment <= 0)
                             {
-                                if (!challenge.cleared) challenge.Fail();
+                                if (!challenge.cleared)
+                                {
+                                    challenge.Fail();
+                                    loki.SetMood(Loki.Mood.Angry, true);
+                                    combo = 0;
+                                }
                             }
                         }
 
@@ -58,6 +68,8 @@ public class GameLoopManager : MonoBehaviour {
                                 if (CheckIfInputEntered(i, challenge.requiredInput))
                                 {
                                     challenge.Clear();
+                                    combo++;
+                                    if (combo >= happyCombo) loki.SetMood(Loki.Mood.Happy, true);
                                 }
                             }
                         }

@@ -4,8 +4,9 @@ public class Challenge : MonoBehaviour {
 
     public enum InputType
     {
-        None,
-        Jump
+        None = 0,
+        Jump = 1,
+        Duck = 2
     }
 
     public GameObject attachedGameObject;
