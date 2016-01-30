@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 93106.52, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 446422}
@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8006ba5796e29a84ea8f4ccf368e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelObject: {fileID: 0}
   chance: 2
   size: 5
   challenge:
@@ -319,11 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351d9755d0a4dd14dad3744d64f14b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedGameObject: {fileID: 0}
-  xOffset: 0
+  attachedGameObject: {fileID: 141178}
+  xOffset: 2
   requiredInput: 0
-  timeLeftUntilInput: 9.5
-  timeLeftUntilJudgment: 10
+  timeLeftUntilInput: 23276.6
+  timeLeftUntilJudgment: 23277.13
   cleared: 0
   failed: 0
 --- !u!212 &21224680
@@ -533,6 +534,22 @@ Prefab:
       propertyPath: challenge.Array.data[0]
       value: 
       objectReference: {fileID: 11432136}
+    - target: {fileID: 0}
+      propertyPath: xOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeLeftUntilInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeLeftUntilJudgment
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attachedGameObject
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141178}

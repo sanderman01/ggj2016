@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System;
 
 public class GameLoopManager : MonoBehaviour {
 
@@ -9,7 +7,7 @@ public class GameLoopManager : MonoBehaviour {
 
     public int playerCount = 4;
     public List<PlayerData> playerDatas;
-    public float movementPerSecond = 3f;
+    public float movementPerSecond = 4f;
     bool running = false;
 
 	// Use this for initialization
@@ -40,33 +38,36 @@ public class GameLoopManager : MonoBehaviour {
                     //Set position of challenge object
                     SetChallengePosition(challenge, i);
 
-                    //Check for failure
-                    if (!challenge.failed)
+                    if (challenge.requiredInput != Challenge.InputType.None)
                     {
-                        if (challenge.timeLeftUntilJudgment <= 0)
+                        //Check for failure
+                        if (!challenge.failed)
                         {
-                            if (!challenge.cleared) challenge.Fail();
-                        }
-                    }
-
-                    //Check for input
-                    if (!challenge.failed && !challenge.cleared)
-                    {
-                        if (challenge.timeLeftUntilInput <= 0)
-                        {
-                            Static.LogOnceVerbose("Challenge timing!", "challenge");
-                            if (CheckIfInputEntered(i, challenge.requiredInput))
+                            if (challenge.timeLeftUntilJudgment <= 0)
                             {
-                                challenge.Clear();
+                                if (!challenge.cleared) challenge.Fail();
                             }
                         }
-                    }
 
-                    //Remove outdated objects
-                    if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
-                    {
-                        data.challenges.Remove(challenge);
-                        j--; //Make sure the removal doesn't affect the for loop
+                        //Check for input
+                        if (!challenge.failed && !challenge.cleared)
+                        {
+                            if (challenge.timeLeftUntilInput <= 0)
+                            {
+                                Static.LogOnceVerbose("Challenge timing!", "challenge");
+                                if (CheckIfInputEntered(i, challenge.requiredInput))
+                                {
+                                    challenge.Clear();
+                                }
+                            }
+                        }
+
+                        //Remove outdated objects
+                        if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
+                        {
+                            data.challenges.Remove(challenge);
+                            j--; //Make sure the removal doesn't affect the for loop
+                        }
                     }
                 }
             }
@@ -83,17 +84,18 @@ public class GameLoopManager : MonoBehaviour {
             PlayerData playerData = new PlayerData(i);
 
             //Generate level
-            Challenge challenge = new Challenge();
-            challenge.requiredInput = Challenge.InputType.Jump;
-            challenge.timeLeftUntilInput = 4.5f;
-            challenge.timeLeftUntilJudgment = 5f;
+            LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
+            lm.CreateNewLevel();
+            foreach(Challenge c in lm.challengeList)
+            {
+                playerData.challenges.Add(c);
+            }
             //DEBUG CODE
             /*GameObject original = (GameObject)Resources.Load("Obstacle");
             challenge.attachedGameObject = GameObject.Instantiate(original);
             challenge.attachedGameObject.transform.localPosition = new Vector3(0, i, 0);*/
             //END DEBUG CODE
-            playerData.challenges.Add(challenge);
-            
+                       
             //Store player data
             playerDatas.Add(playerData);
         }

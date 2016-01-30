@@ -4,13 +4,14 @@ public class Challenge : MonoBehaviour {
 
     public enum InputType
     {
+        None,
         Jump
     }
 
     public GameObject attachedGameObject;
     public float xOffset = 0; //X coordinate offset from start of gameObject that the challenge is judged at
 
-    public InputType requiredInput = InputType.Jump; //Button to push/action to take to clear this challenge
+    public InputType requiredInput = InputType.None; //Button to push/action to take to clear this challenge
     public float timeLeftUntilInput = 9.5f; //Once this hits 0, you can start inputting the required command
     public float timeLeftUntilJudgment = 10f; //Once this hits 0, you will fail the challenge unless it is already cleared
     public bool cleared = false; //Set to true once the user enters the right input
