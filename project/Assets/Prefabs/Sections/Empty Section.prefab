@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8006ba5796e29a84ea8f4ccf368e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 0
-  size: 0
+  chance: 3
+  size: 5
   challenge: []
 --- !u!212 &21208148
 SpriteRenderer:
@@ -418,7 +418,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: chance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: size
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196190}
