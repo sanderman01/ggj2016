@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 2cfabad61c41c66488bd5d5f72e8f87e
+timeCreated: 1454167633
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: VikingWalk_6FPS_400x400Frames_0
+    21300002: VikingWalk_6FPS_400x400Frames_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: VikingWalk_6FPS_400x400Frames_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 17
+        width: 359
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 133.5, y: -148}
+        - {x: 179.5, y: -110}
+        - {x: 179.5, y: -72}
+        - {x: 123.5, y: -59}
+        - {x: 134.5, y: 87}
+        - {x: 144.5, y: 122}
+        - {x: 137.5, y: 136}
+        - {x: 123.5, y: 143}
+        - {x: 43.5, y: 151}
+        - {x: 57.5, y: 170}
+        - {x: 28.5, y: 170}
+        - {x: -2.5, y: 153}
+        - {x: 10.5, y: 123}
+        - {x: -29.5, y: 137}
+        - {x: -51.5, y: 139}
+        - {x: -84.5, y: 129}
+        - {x: -118.5, y: 100}
+        - {x: -179.5, y: 40}
+        - {x: -179.5, y: -17}
+        - {x: -175.5, y: -27}
+        - {x: -113.5, y: -56}
+        - {x: -97.5, y: -107}
+        - {x: -87.5, y: -165}
+        - {x: -67.5, y: -170}
+        - {x: -26.5, y: -170}
+        - {x: -26.5, y: -154}
+        - {x: 39.5, y: -105}
+        - {x: 61.5, y: -120}
+    - name: VikingWalk_6FPS_400x400Frames_1
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 21
+        width: 300
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100, y: -111.5}
+        - {x: 100, y: -105.5}
+        - {x: 85, y: -85.5}
+        - {x: 145, y: -58.5}
+        - {x: 150, y: -44.5}
+        - {x: 150, y: 41.5}
+        - {x: 124, y: 131.5}
+        - {x: 143, y: 145.5}
+        - {x: 122, y: 181.5}
+        - {x: 101, y: 181.5}
+        - {x: 31, y: 161.5}
+        - {x: 34, y: 181.5}
+        - {x: 10, y: 181.5}
+        - {x: -20, y: 149.5}
+        - {x: -88, y: 131.5}
+        - {x: -101, y: 111.5}
+        - {x: -123, y: 74.5}
+        - {x: -150, y: -6.5}
+        - {x: -150, y: -36.5}
+        - {x: -135, y: -66.5}
+        - {x: -33, y: -97.5}
+        - {x: -68, y: -111.5}
+        - {x: -73, y: -145.5}
+        - {x: -49, y: -172.5}
+        - {x: 12, y: -181.5}
+        - {x: 78, y: -181.5}
+        - {x: 79, y: -180.5}
+        - {x: 80, y: -176.5}
+        - {x: 80, y: -129.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
