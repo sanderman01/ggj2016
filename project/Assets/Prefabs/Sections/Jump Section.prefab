@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6960.916, y: 0, z: 0}
+  m_LocalPosition: {x: 68920.59, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 446422}
@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8006ba5796e29a84ea8f4ccf368e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelObject: {fileID: 0}
   chance: 2
   size: 5
   challenge:
@@ -319,11 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351d9755d0a4dd14dad3744d64f14b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedGameObject: {fileID: 0}
+  attachedGameObject: {fileID: 141178}
   xOffset: 2
   requiredInput: 0
-  timeLeftUntilInput: 1740.229
-  timeLeftUntilJudgment: 1740.729
+  timeLeftUntilInput: 17230.148
+  timeLeftUntilJudgment: 17230.648
   cleared: 0
   failed: 0
 --- !u!212 &21224680
