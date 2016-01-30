@@ -7,9 +7,11 @@ public class LevelManager : MonoBehaviour {
     public List<Challenge> challengeList = new List<Challenge>();
     public List<LevelPart> activeLevelParts = new List<LevelPart>();
 
-    public void CreateNewLevel()
+    public void CreateNewLevel(int playerID)
     {
-        CreateLevel(levelParts);
+        activeLevelParts.Clear();
+        challengeList.Clear();
+        CreateLevel(levelParts, playerID);
         AddToChallengeList(activeLevelParts);
     }
 
@@ -30,7 +32,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    private void CreateLevel(List<LevelPart> levelParts)
+    private void CreateLevel(List<LevelPart> levelParts, int playerID)
     {
         List<LevelPart> temp = new List<LevelPart>();
         int generated=0;
@@ -46,10 +48,11 @@ public class LevelManager : MonoBehaviour {
         while(generated <levelLength)
         {
             int r = Random.Range(0, count);
-            LevelPart newLevelPart = Instantiate(temp[r]);
+            //LevelPart newLevelPart = Instantiate(temp[r]);
+            
+            GameObject g = (GameObject) Instantiate(temp[r].gameObject, new Vector3(100, playerID * 4 - 4, 0), Quaternion.identity); //FIXME: Magic numbers
+            LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
             generated += newLevelPart.size;
-            GameObject g = (GameObject) Instantiate(newLevelPart.gameObject, new Vector3(100, 100, 100), Quaternion.identity);
-            // newLevelPart.transform.parent = temp[r].transform;
             g.transform.parent = newLevelPart.transform;
             activeLevelParts.Add(newLevelPart);
         }
