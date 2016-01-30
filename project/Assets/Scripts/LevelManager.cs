@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System;
 
 public class LevelManager : MonoBehaviour {
     public const int levelLength = 100;
@@ -8,7 +7,7 @@ public class LevelManager : MonoBehaviour {
     public List<Challenge> challengeList = new List<Challenge>();
     public List<LevelPart> activeLevelParts = new List<LevelPart>();
 
-    void CreateNewLevel()
+    public void CreateNewLevel()
     {
         CreateLevel(levelParts);
         AddToChallengeList(activeLevelParts);
@@ -16,12 +15,18 @@ public class LevelManager : MonoBehaviour {
 
     private void AddToChallengeList(List<LevelPart> activeLevelParts)
     {
-        foreach(LevelPart lp in activeLevelParts)
+        int totalSize=0;
+        for(int i=0;i<activeLevelParts.Count;i++)
         {
-            foreach(Challenge c in lp.challenge)
+            foreach(Challenge c in activeLevelParts[i].challenge)
             {
+                c.attachedGameObject = activeLevelParts[i].levelObject;
+                float timer = 0.25f * totalSize;
+                c.timeLeftUntilInput += timer;
+                c.timeLeftUntilJudgment += timer;
                 challengeList.Add(c);
             }
+            totalSize += activeLevelParts[i].size;
         }
     }
 
@@ -40,9 +45,11 @@ public class LevelManager : MonoBehaviour {
         }
         while(generated <levelLength)
         {
-            int r = UnityEngine.Random.Range(0, count);
+            int r = Random.Range(0, count);
             LevelPart newLevelPart = temp[r];
             generated += newLevelPart.size;
+            GameObject g = (GameObject) Instantiate(newLevelPart.gameObject, new Vector3(100, 100, 100), Quaternion.identity);
+            g.transform.parent = gameObject.transform;
             activeLevelParts.Add(newLevelPart);
         }
     }

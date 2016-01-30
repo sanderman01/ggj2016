@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System;
 
 public class GameLoopManager : MonoBehaviour {
 
@@ -9,7 +7,7 @@ public class GameLoopManager : MonoBehaviour {
 
     public int playerCount = 4;
     public List<PlayerData> playerDatas;
-    public float movementPerSecond = 3f;
+    public float movementPerSecond = 4f;
     bool running = false;
 
 	// Use this for initialization
@@ -83,12 +81,18 @@ public class GameLoopManager : MonoBehaviour {
             PlayerData playerData = new PlayerData(i);
 
             //Generate level
-            Challenge challenge = new Challenge();
-            challenge.requiredInput = Challenge.InputType.Jump;
-            challenge.timeLeftUntilInput = 4.5f;
-            challenge.timeLeftUntilJudgment = 5f;
+            LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
+            lm.CreateNewLevel();
+            foreach(Challenge c in lm.challengeList)
+            {
+                playerData.challenges.Add(c);
+            }
 
-            playerData.challenges.Add(challenge);
+            ////Generate level
+            //Challenge challenge = new Challenge();
+            //challenge.requiredInput = Challenge.InputType.Jump;
+            //challenge.timeLeftUntilInput = 4.5f;
+            //challenge.timeLeftUntilJudgment = 5f;
             
             //Store player data
             playerDatas.Add(playerData);
@@ -110,7 +114,7 @@ public class GameLoopManager : MonoBehaviour {
 
     void SetChallengePosition(Challenge challenge, int playerID)
     {
-        GameObject go = challenge.gameObject;
+        GameObject go = challenge.attachedGameObject;
         if (go != null)
         {
             float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
