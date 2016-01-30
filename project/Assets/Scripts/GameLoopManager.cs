@@ -38,33 +38,36 @@ public class GameLoopManager : MonoBehaviour {
                     //Set position of challenge object
                     SetChallengePosition(challenge, i);
 
-                    //Check for failure
-                    if (!challenge.failed)
+                    if (challenge.requiredInput != Challenge.InputType.None)
                     {
-                        if (challenge.timeLeftUntilJudgment <= 0)
+                        //Check for failure
+                        if (!challenge.failed)
                         {
-                            if (!challenge.cleared) challenge.Fail();
-                        }
-                    }
-
-                    //Check for input
-                    if (!challenge.failed && !challenge.cleared)
-                    {
-                        if (challenge.timeLeftUntilInput <= 0)
-                        {
-                            Static.LogOnceVerbose("Challenge timing!", "challenge");
-                            if (CheckIfInputEntered(i, challenge.requiredInput))
+                            if (challenge.timeLeftUntilJudgment <= 0)
                             {
-                                challenge.Clear();
+                                if (!challenge.cleared) challenge.Fail();
                             }
                         }
-                    }
 
-                    //Remove outdated objects
-                    if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
-                    {
-                        data.challenges.Remove(challenge);
-                        j--; //Make sure the removal doesn't affect the for loop
+                        //Check for input
+                        if (!challenge.failed && !challenge.cleared)
+                        {
+                            if (challenge.timeLeftUntilInput <= 0)
+                            {
+                                Static.LogOnceVerbose("Challenge timing!", "challenge");
+                                if (CheckIfInputEntered(i, challenge.requiredInput))
+                                {
+                                    challenge.Clear();
+                                }
+                            }
+                        }
+
+                        //Remove outdated objects
+                        if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
+                        {
+                            data.challenges.Remove(challenge);
+                            j--; //Make sure the removal doesn't affect the for loop
+                        }
                     }
                 }
             }
