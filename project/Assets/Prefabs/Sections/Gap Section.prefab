@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29645.01, y: 0, z: 0}
+  m_LocalPosition: {x: 42675.344, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440320}
@@ -235,8 +235,8 @@ MonoBehaviour:
   attachedGameObject: {fileID: 164270}
   xOffset: 2
   requiredInput: 0
-  timeLeftUntilInput: 7411.2534
-  timeLeftUntilJudgment: 7411.7524
+  timeLeftUntilInput: 10668.838
+  timeLeftUntilJudgment: 10669.336
   cleared: 0
   failed: 0
 --- !u!212 &21228436
