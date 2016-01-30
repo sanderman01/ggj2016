@@ -47,7 +47,11 @@ public class LevelManager : MonoBehaviour {
         }
         while(generated <levelLength)
         {
-            int r = Random.Range(0, count);
+            int r = 0;
+            if(generated > 10)
+            {
+                r = Random.Range(0, count);
+            }   
             //LevelPart newLevelPart = Instantiate(temp[r]);          
             GameObject g = (GameObject) Instantiate(temp[r].gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
             LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
