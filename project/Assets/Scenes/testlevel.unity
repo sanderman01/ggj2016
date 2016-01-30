@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loki: {fileID: 732517183}
   playerCount: 4
+  playerPrefab: {fileID: 196374, guid: 177dec159cc42e148a4f1353ba74267b, type: 2}
   movementPerSecond: 4
 --- !u!4 &1400226901
 Transform:

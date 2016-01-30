@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour {
 
     private void CreateLevel(List<LevelPart> levelParts, float yPos)
     {
+        activeLevelParts.Clear();
+        challengeList.Clear();
         List<LevelPart> temp = new List<LevelPart>();
         int generated=0;
         int count=0;
@@ -53,7 +55,5 @@ public class LevelManager : MonoBehaviour {
             g.transform.parent = newLevelPart.transform;
             activeLevelParts.Add(newLevelPart);
         }
-        activeLevelParts.Clear();
-        challengeList.Clear();
     }
 }
