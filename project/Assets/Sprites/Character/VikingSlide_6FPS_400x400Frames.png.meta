@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 2a9a5a2154931c04ca3bd58a102fc34f
+timeCreated: 1454183616
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: VikingSlide_6FPS_400x400Frames_0
+    21300002: VikingSlide_6FPS_400x400Frames_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: VikingSlide_6FPS_400x400Frames_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 29
+        width: 341
+        height: 328
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 170.5, y: -103.8}
+        - {x: 159.5, y: -107.8}
+        - {x: 154.5, y: -109.8}
+        - {x: 165.5, y: -99.8}
+        - {x: 170.5, y: -92.8}
+        - {x: 170.5, y: -58.800003}
+        - {x: 152.5, y: -45.800003}
+        - {x: 141.5, y: -40.800003}
+        - {x: 161.5, y: 84.2}
+        - {x: 152.5, y: 107.2}
+        - {x: 62.5, y: 117.2}
+        - {x: 68.5, y: 131.2}
+        - {x: 37.5, y: 131.2}
+        - {x: 6.5, y: 114.2}
+        - {x: -21.5, y: 104.2}
+        - {x: -77.5, y: 95.2}
+        - {x: -94.5, y: 78.2}
+        - {x: -170.5, y: 7.199997}
+        - {x: -170.5, y: -53.800003}
+        - {x: -165.5, y: -74.8}
+        - {x: -46.5, y: -116.8}
+        - {x: -33.5, y: -185.8}
+        - {x: -16.5, y: -196.8}
+        - {x: 44.5, y: -196.8}
+        - {x: 77.5, y: -182.8}
+        - {x: 118.5, y: -187.8}
+        - {x: 170.5, y: -163.8}
+    - name: VikingSlide_6FPS_400x400Frames_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 27
+        width: 370
+        height: 303
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: -80.09999}
+        - {x: -30, y: -187.09999}
+        - {x: -5, y: -212.09999}
+        - {x: 30, y: -212.09999}
+        - {x: 185, y: -147.09999}
+        - {x: 185, y: -75.09999}
+        - {x: 165, y: -62.09999}
+        - {x: 120, y: -102.09999}
+        - {x: 117, y: -56.09999}
+        - {x: 102, y: 31.90001}
+        - {x: 109, y: 65.90001}
+        - {x: 77, y: 90.90001}
+        - {x: 65, y: 90.90001}
+        - {x: -2, y: 67.90001}
+        - {x: 5, y: 90.90001}
+        - {x: -9, y: 90.90001}
+        - {x: -45, y: 62.90001}
+        - {x: -44, y: 56.90001}
+        - {x: -84, y: 38.90001}
+        - {x: -132, y: 8.900009}
+        - {x: -185, y: -78.09999}
+        - {x: -185, y: -126.09999}
+        - {x: -183, y: -132.09999}
+        - {x: -133, y: -200.09999}
+        - {x: -111, y: -212.09999}
+        - {x: -69, y: -212.09999}
+        - {x: -42, y: -172.09999}
+        - {x: -64, y: -144.09999}
+        - {x: -98, y: -123.09999}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
