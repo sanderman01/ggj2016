@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class LevelManager : MonoBehaviour {
+	public Dictionary<GameObject, int> LevelPart =	new Dictionary<GameObject, int>();
+    public List<Challenge> ChallengeList = new List<Challenge>();
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void Start()
+    {
+        AddToChallengeList(LevelPart);
+    }
+
+    private void AddToChallengeList(Dictionary<GameObject, int> levelPart)
+    {
+        throw new NotImplementedException();
+    }
 }
