@@ -29,12 +29,14 @@ public class Challenge : MonoBehaviour {
     public void Clear()
     {
         cleared = true;
+        AudioManager.PlaySoundStatic("success");
         Static.VerboseLog("Challenge cleared!");
     }
 
     public void Fail()
     {
         failed = true;
+        AudioManager.PlaySoundStatic("fail");
         Static.VerboseLog("Challenge failed!");
     }
 }
