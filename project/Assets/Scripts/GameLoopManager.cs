@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class GameLoopManager : MonoBehaviour {
 
     const float CHALLENGE_REMOVAL_LIMIT = 5f;
 
-    public int playerCount = 0;
+    public int playerCount = 4;
     public List<PlayerData> playerDatas;
-    public float movementPerSecond = 100f;
+    public float movementPerSecond = 3f;
     bool running = false;
 
 	// Use this for initialization
@@ -34,7 +36,9 @@ public class GameLoopManager : MonoBehaviour {
                     //Change time
                     challenge.timeLeftUntilInput -= seconds;
                     challenge.timeLeftUntilJudgment -= seconds;
-                    //TODO: Update position of challenge object
+                    
+                    //Set position of challenge object
+                    SetChallengePosition(challenge, i);
 
                     //Check for failure
                     if (!challenge.failed)
@@ -83,6 +87,7 @@ public class GameLoopManager : MonoBehaviour {
             challenge.requiredInput = Challenge.InputType.Jump;
             challenge.timeLeftUntilInput = 4.5f;
             challenge.timeLeftUntilJudgment = 5f;
+
             playerData.challenges.Add(challenge);
             
             //Store player data
@@ -109,7 +114,7 @@ public class GameLoopManager : MonoBehaviour {
         if (go != null)
         {
             float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
-            targetX += challenge.timeLeftUntilJudgment *= movementPerSecond; //Move it away from player depending on judgment time
+            targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
             targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
