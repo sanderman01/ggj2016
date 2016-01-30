@@ -7,6 +7,7 @@ public class GameLoopManager : MonoBehaviour {
 
     public int playerCount = 0;
     public List<PlayerData> playerDatas;
+    public float movementPerSecond = 100f;
     bool running = false;
 
 	// Use this for initialization
@@ -100,5 +101,21 @@ public class GameLoopManager : MonoBehaviour {
         int bn = playerID + 1; //Button number; 1-based, as opposed to playerID which is 0-based
         if (Input.GetButton("Jump" + bn) && inputType == Challenge.InputType.Jump) return true;
         return false;
+    }
+
+    void SetChallengePosition(Challenge challenge, int playerID)
+    {
+        GameObject go = challenge.gameObject;
+        if (go != null)
+        {
+            float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
+            targetX += challenge.timeLeftUntilJudgment *= movementPerSecond; //Move it away from player depending on judgment time
+            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
+        }
+        else
+        {
+            Static.WarningOnce("Null object on challenge for player " + playerID, "nullobject");
+        }
     }
 }
