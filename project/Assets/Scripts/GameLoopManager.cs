@@ -87,7 +87,11 @@ public class GameLoopManager : MonoBehaviour {
             challenge.requiredInput = Challenge.InputType.Jump;
             challenge.timeLeftUntilInput = 4.5f;
             challenge.timeLeftUntilJudgment = 5f;
-
+            //DEBUG CODE
+            /*GameObject original = (GameObject)Resources.Load("Obstacle");
+            challenge.gameObject = GameObject.Instantiate(original);
+            challenge.gameObject.transform.localPosition = new Vector3(0, i, 0);*/
+            //END DEBUG CODE
             playerData.challenges.Add(challenge);
             
             //Store player data
