@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Challenge : MonoBehaviour {
+public class Challenge {
 
     public enum InputType
     {
         Jump
     }
+
+    public GameObject gameObject;
+    public float xOffset = 0; //X coordinate offset from start of gameObject that the challenge is judged at
 
     public InputType requiredInput = InputType.Jump; //Button to push/action to take to clear this challenge
     public float timeLeftUntilInput = 9.5f; //Once this hits 0, you can start inputting the required command
