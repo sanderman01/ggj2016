@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public static class Static {
 
     static bool VERBOSE = true;
+    public static bool SHOW_FLOORS = true;
 
     static List<string> alreadyLogged = new List<string>();
     

@@ -96,7 +96,7 @@ public class GameLoopManager : MonoBehaviour {
             //Create player
             PlayerData playerData = new PlayerData(i);
             playerData.yPos = i * 4 - 4;
-            GameObject character = (GameObject)Instantiate(playerPrefab, new Vector3(playerData.xPos,playerData.yPos,0), Quaternion.identity);
+            GameObject character = (GameObject)Instantiate(playerPrefab, new Vector3(playerData.xPos,playerData.yPos - 0.5f,0), Quaternion.identity);
 
             //Generate level
             LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;

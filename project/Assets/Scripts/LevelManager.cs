@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 	public List<LevelPart> levelParts =	new List<LevelPart>();
     public List<Challenge> challengeList = new List<Challenge>();
     public List<LevelPart> activeLevelParts = new List<LevelPart>();
+    public LevelPart emptySection;
 
     public void CreateNewLevel(float yPos)
     {
@@ -15,7 +16,7 @@ public class LevelManager : MonoBehaviour {
 
     private void AddToChallengeList(List<LevelPart> activeLevelParts)
     {
-        int totalSize=0;
+        int totalSize=-5; //Start earlier with the empty sections
         for(int i=0;i<activeLevelParts.Count;i++)
         {
             foreach(Challenge c in activeLevelParts[i].challenge)
@@ -45,15 +46,27 @@ public class LevelManager : MonoBehaviour {
                 temp.Add(lp);
             }
         }
-        while(generated <levelLength)
+
+        //Add starter level parts
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject g = (GameObject)Instantiate(emptySection.gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
+            LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
+            generated += newLevelPart.size;
+            g.transform.parent = newLevelPart.transform;
+            activeLevelParts.Add(newLevelPart);
+        }
+
+        //Add random level parts
+        while (generated < levelLength)
         {
             int r = 0;
-            if(generated > 10)
+            if (generated > 10)
             {
                 r = Random.Range(0, count);
-            }   
+            }
             //LevelPart newLevelPart = Instantiate(temp[r]);          
-            GameObject g = (GameObject) Instantiate(temp[r].gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
+            GameObject g = (GameObject)Instantiate(temp[r].gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
             LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
             generated += newLevelPart.size;
             g.transform.parent = newLevelPart.transform;
