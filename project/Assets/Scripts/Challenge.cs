@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Challenge {
 
@@ -29,13 +28,13 @@ public class Challenge {
 
     public void Clear()
     {
-        this.cleared = true;
+        cleared = true;
         Static.VerboseLog("Challenge cleared!");
     }
 
     public void Fail()
     {
-        this.failed = true;
+        failed = true;
         Static.VerboseLog("Challenge failed!");
     }
 }

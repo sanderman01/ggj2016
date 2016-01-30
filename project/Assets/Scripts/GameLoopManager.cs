@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System;
 
 public class GameLoopManager : MonoBehaviour {
 
     const float CHALLENGE_REMOVAL_LIMIT = 5f;
 
-    public int playerCount = 4;
+    public int playerCount = 0;
     public List<PlayerData> playerDatas;
     bool running = false;
 
