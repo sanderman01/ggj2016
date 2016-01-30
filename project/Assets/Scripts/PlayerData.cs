@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerData : MonoBehaviour {
@@ -10,6 +9,6 @@ public class PlayerData : MonoBehaviour {
     public PlayerData(int playerID)
     {
         this.playerID = playerID;
-        this.challenges = new List<Challenge>();
+        challenges = new List<Challenge>();
     }
 }
