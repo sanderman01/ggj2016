@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class Challenge {
+public class Challenge : MonoBehaviour {
 
     public enum InputType
     {
         Jump
     }
 
-    public GameObject gameObject;
+    public GameObject attachedGameObject;
     public float xOffset = 0; //X coordinate offset from start of gameObject that the challenge is judged at
 
     public InputType requiredInput = InputType.Jump; //Button to push/action to take to clear this challenge

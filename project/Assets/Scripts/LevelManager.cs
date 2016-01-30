@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using Assets.Scripts.Model;
 using System;
 
 public class LevelManager : MonoBehaviour {
@@ -9,7 +8,7 @@ public class LevelManager : MonoBehaviour {
     public List<Challenge> challengeList = new List<Challenge>();
     public List<LevelPart> activeLevelParts = new List<LevelPart>();
 
-    void Start()
+    void CreateNewLevel()
     {
         CreateLevel(levelParts);
         AddToChallengeList(activeLevelParts);
@@ -17,7 +16,13 @@ public class LevelManager : MonoBehaviour {
 
     private void AddToChallengeList(List<LevelPart> activeLevelParts)
     {
-        throw new NotImplementedException();
+        foreach(LevelPart lp in activeLevelParts)
+        {
+            foreach(Challenge c in lp.challenge)
+            {
+                challengeList.Add(c);
+            }
+        }
     }
 
     private void CreateLevel(List<LevelPart> levelParts)
