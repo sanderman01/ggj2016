@@ -93,6 +93,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452506}
+  - 114: {fileID: 11409688}
+  - 114: {fileID: 11432136}
   m_Layer: 0
   m_Name: Jump Section
   m_TagString: Untagged
@@ -291,6 +293,39 @@ BoxCollider2D:
   m_Offset: {x: 0.5, y: 0.5}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11409688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8006ba5796e29a84ea8f4ccf368e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 2
+  size: 5
+  challenge:
+  - {fileID: 11432136}
+--- !u!114 &11432136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351d9755d0a4dd14dad3744d64f14b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachedGameObject: {fileID: 0}
+  xOffset: 0
+  requiredInput: 0
+  timeLeftUntilInput: 9.5
+  timeLeftUntilJudgment: 10
+  cleared: 0
+  failed: 0
 --- !u!212 &21224680
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -477,7 +512,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: challenge.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: challenge.Array.data[0]
+      value: 
+      objectReference: {fileID: 11432136}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141178}

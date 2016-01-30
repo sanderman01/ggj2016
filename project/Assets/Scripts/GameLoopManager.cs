@@ -87,7 +87,11 @@ public class GameLoopManager : MonoBehaviour {
             challenge.requiredInput = Challenge.InputType.Jump;
             challenge.timeLeftUntilInput = 4.5f;
             challenge.timeLeftUntilJudgment = 5f;
-
+            //DEBUG CODE
+            /*GameObject original = (GameObject)Resources.Load("Obstacle");
+            challenge.attachedGameObject = GameObject.Instantiate(original);
+            challenge.attachedGameObject.transform.localPosition = new Vector3(0, i, 0);*/
+            //END DEBUG CODE
             playerData.challenges.Add(challenge);
             
             //Store player data
@@ -110,7 +114,7 @@ public class GameLoopManager : MonoBehaviour {
 
     void SetChallengePosition(Challenge challenge, int playerID)
     {
-        GameObject go = challenge.gameObject;
+        GameObject go = challenge.attachedGameObject;
         if (go != null)
         {
             float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
