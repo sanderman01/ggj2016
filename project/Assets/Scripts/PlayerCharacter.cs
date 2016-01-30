@@ -8,6 +8,9 @@ public class PlayerCharacter : MonoBehaviour
 
     private const float JumpVelocity = 15;
     private const float FallVelocity = -20;
+
+    public int playerID;
+
     private bool _grounded = false;
 
     private Rigidbody2D _rigidbody;
@@ -39,7 +42,7 @@ public class PlayerCharacter : MonoBehaviour
     void Update()
     {
         // Temporary controls
-        if (Input.GetKeyDown(KeyCode.Space)) StartJump();
+        if (Input.GetButton("Jump" + (playerID + 1))) StartJump();
         if (Input.GetKeyDown(KeyCode.DownArrow)) StartSlide();
         if (Input.GetKeyUp(KeyCode.DownArrow)) StopSlide();
     }
