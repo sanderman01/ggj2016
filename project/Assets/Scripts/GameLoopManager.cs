@@ -6,6 +6,7 @@ public class GameLoopManager : MonoBehaviour {
     const float CHALLENGE_REMOVAL_LIMIT = 5f;
 
     public int playerCount = 4;
+    public GameObject playerPrefab;
     public List<PlayerData> playerDatas;
     public float movementPerSecond = 4f;
     bool running = false;
@@ -79,13 +80,15 @@ public class GameLoopManager : MonoBehaviour {
         this.playerCount = playerCount;
         playerDatas = new List<PlayerData>();
         for(int i = 0; i < playerCount; i++)
-        {
+        { 
             //Create player
             PlayerData playerData = new PlayerData(i);
+            playerData.yPos = i * 4 - 4;
+            GameObject character = (GameObject)Instantiate(playerPrefab, new Vector3(playerData.xPos,playerData.yPos,0), Quaternion.identity);
 
             //Generate level
             LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
-            lm.CreateNewLevel(i);
+            lm.CreateNewLevel(playerData.yPos);
             foreach(Challenge c in lm.challengeList)
             {
                 playerData.challenges.Add(c);
