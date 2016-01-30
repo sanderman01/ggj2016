@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour {
         {
             foreach(Challenge c in activeLevelParts[i].challenge)
             {
-                c.attachedGameObject = activeLevelParts[i].levelObject;
+                c.attachedGameObject = activeLevelParts[i].gameObject;
                 float timer = 0.25f * totalSize;
                 c.timeLeftUntilInput += timer;
                 c.timeLeftUntilJudgment += timer;
