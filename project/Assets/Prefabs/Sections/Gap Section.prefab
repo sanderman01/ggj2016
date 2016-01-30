@@ -59,6 +59,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 456642}
+  - 114: {fileID: 11480916}
   m_Layer: 0
   m_Name: Gap Section
   m_TagString: Untagged
@@ -203,6 +204,20 @@ BoxCollider2D:
   m_Offset: {x: 0.5, y: 0.5}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11480916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8006ba5796e29a84ea8f4ccf368e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 0
+  size: 0
+  challenge: []
 --- !u!212 &21228436
 SpriteRenderer:
   m_ObjectHideFlags: 1

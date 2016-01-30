@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace Assets.Scripts.Model
-{
-    public class LevelPart : MonoBehaviour
+public class LevelPart : MonoBehaviour { 
+    private GameObject levelObject;
+    public int chance;
+    public int size;
+    public List<Challenge> challenge = new List<Challenge>();
+
+    void start()
     {
-        public GameObject levelObject;
-        public int chance;
-        public int size;
+        levelObject = gameObject;
     }
 }
