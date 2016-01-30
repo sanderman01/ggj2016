@@ -85,16 +85,11 @@ public class GameLoopManager : MonoBehaviour {
 
             //Generate level
             LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
-            lm.CreateNewLevel();
+            lm.CreateNewLevel(i);
             foreach(Challenge c in lm.challengeList)
             {
                 playerData.challenges.Add(c);
             }
-            //DEBUG CODE
-            /*GameObject original = (GameObject)Resources.Load("Obstacle");
-            challenge.attachedGameObject = GameObject.Instantiate(original);
-            challenge.attachedGameObject.transform.localPosition = new Vector3(0, i, 0);*/
-            //END DEBUG CODE
                        
             //Store player data
             playerDatas.Add(playerData);
@@ -121,7 +116,7 @@ public class GameLoopManager : MonoBehaviour {
         {
             float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
             targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
-            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            //targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
         else
