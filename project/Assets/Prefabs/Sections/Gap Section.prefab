@@ -235,8 +235,8 @@ MonoBehaviour:
   attachedGameObject: {fileID: 164270}
   xOffset: 2
   requiredInput: 0
-  timeLeftUntilInput: 10668.838
-  timeLeftUntilJudgment: 10669.336
+  timeLeftUntilInput: 0
+  timeLeftUntilJudgment: 0.5
   cleared: 0
   failed: 0
 --- !u!212 &21228436
