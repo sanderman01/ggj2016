@@ -394,7 +394,7 @@ Transform:
   m_LocalScale: {x: 1.2043992, y: 1.0364995, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &732517180
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ Transform:
   m_LocalScale: {x: 2.547556, y: 27.481829, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1400226899
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loki: {fileID: 732517183}
+  timerText: {fileID: 487165885}
   playerCount: 4
   playerPrefab: {fileID: 196374, guid: 177dec159cc42e148a4f1353ba74267b, type: 2}
   movementPerSecond: 4
