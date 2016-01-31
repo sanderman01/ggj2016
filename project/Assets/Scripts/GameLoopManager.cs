@@ -20,6 +20,7 @@ public class GameLoopManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         InitializeGame(4);
+        happyCombo = 4 * playerCount;
         StartGame();       
 	}
     void OnGUI()
@@ -135,7 +136,7 @@ public class GameLoopManager : MonoBehaviour {
     {
         int bn = playerID + 1; //Button number; 1-based, as opposed to playerID which is 0-based
         if (Input.GetButton("Jump" + bn) && inputType == Challenge.InputType.Jump) return true;
-        if (Input.GetButton("Fire" + bn) && inputType == Challenge.InputType.Duck) return true;
+        if (Input.GetButton("Slide" + bn) && inputType == Challenge.InputType.Duck) return true;
         return false;
     }
 
