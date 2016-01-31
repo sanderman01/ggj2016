@@ -19,7 +19,7 @@ public class GameLoopManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        InitializeGame(4);
+        InitializeGame(1);
         happyCombo = 4 * playerCount;
         //StartGame();       
 	}

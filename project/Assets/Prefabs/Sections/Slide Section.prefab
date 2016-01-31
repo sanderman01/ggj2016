@@ -566,7 +566,7 @@ MonoBehaviour:
   xOffset: 1
   requiredInput: 2
   timeLeftUntilInput: 0
-  timeLeftUntilJudgment: 0.5
+  timeLeftUntilJudgment: 0.25
   cleared: 0
   failed: 0
 --- !u!114 &11427200
@@ -962,7 +962,7 @@ Prefab:
       objectReference: {fileID: 11416920}
     - target: {fileID: 0}
       propertyPath: xOffset
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: timeLeftUntilInput
@@ -970,7 +970,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: timeLeftUntilJudgment
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: attachedGameObject
