@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 246e483ade6d85b4196088680c1d7eaf
+timeCreated: 1454226468
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: VikingJump_12FPS_400x400Frames_0
+    21300002: VikingJump_12FPS_400x400Frames_1
+    21300004: VikingJump_12FPS_400x400Frames_2
+    21300006: VikingJump_12FPS_400x400Frames_3
+    21300008: VikingJump_12FPS_400x400Frames_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: VikingJump_12FPS_400x400Frames_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 131, y: -80}
+        - {x: 149, y: -66}
+        - {x: 152, y: -54}
+        - {x: 152, y: -23}
+        - {x: 122, y: -14}
+        - {x: 130, y: 25}
+        - {x: 127, y: 47}
+        - {x: 134, y: 92}
+        - {x: 119, y: 110}
+        - {x: 67, y: 119}
+        - {x: 41, y: 122}
+        - {x: 51, y: 144}
+        - {x: 49, y: 145}
+        - {x: 35, y: 145}
+        - {x: 12, y: 140}
+        - {x: -8, y: 131}
+        - {x: -57, y: 125}
+        - {x: -102, y: 100}
+        - {x: -175, y: 17}
+        - {x: -175, y: -32}
+        - {x: -141, y: -96}
+        - {x: -159, y: -147}
+        - {x: -148, y: -154}
+        - {x: -69, y: -156}
+        - {x: -46, y: -187}
+        - {x: -43, y: -188}
+        - {x: 60, y: -188}
+        - {x: 83, y: -185}
+        - {x: 88, y: -111}
+        - {x: 80, y: -77}
+    - name: VikingJump_12FPS_400x400Frames_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -110}
+        - {x: 112, y: -72}
+        - {x: 175, y: -61}
+        - {x: 175, y: -12}
+        - {x: 160, y: 6}
+        - {x: 137, y: 64}
+        - {x: 118, y: 96}
+        - {x: 64, y: 97}
+        - {x: 42, y: 118}
+        - {x: 33, y: 118}
+        - {x: 28, y: 117}
+        - {x: -9, y: 102}
+        - {x: -13, y: 100}
+        - {x: -67, y: 89}
+        - {x: -108, y: 71}
+        - {x: -187, y: 0}
+        - {x: -187, y: -36}
+        - {x: -163, y: -63}
+        - {x: -139, y: -75}
+        - {x: -156, y: -124}
+        - {x: -146, y: -134}
+        - {x: -103, y: -147}
+        - {x: -33, y: -184}
+        - {x: 2, y: -184}
+        - {x: 12, y: -182}
+        - {x: 42, y: -183}
+        - {x: 71, y: -177}
+        - {x: 122, y: -116}
+    - name: VikingJump_12FPS_400x400Frames_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 134, y: -120}
+        - {x: 112, y: -103}
+        - {x: 171, y: -102}
+        - {x: 182, y: -79}
+        - {x: 182, y: -43}
+        - {x: 167, y: -34}
+        - {x: 125, y: 21}
+        - {x: 137, y: 49}
+        - {x: 122, y: 67}
+        - {x: 86, y: 68}
+        - {x: 48, y: 86}
+        - {x: 28, y: 86}
+        - {x: -96, y: 36}
+        - {x: -177, y: -24}
+        - {x: -177, y: -59}
+        - {x: -164, y: -87}
+        - {x: -129, y: -112}
+        - {x: -124, y: -134}
+        - {x: -121, y: -147}
+        - {x: -105, y: -188}
+        - {x: -43, y: -189}
+        - {x: 39, y: -189}
+        - {x: 63, y: -182}
+        - {x: 86, y: -165}
+        - {x: 126, y: -135}
+    - name: VikingJump_12FPS_400x400Frames_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 126, y: -25}
+        - {x: 171, y: 10}
+        - {x: 188, y: 24}
+        - {x: 188, y: 43}
+        - {x: 167, y: 82}
+        - {x: 128, y: 80}
+        - {x: 132, y: 110}
+        - {x: 113, y: 121}
+        - {x: 48, y: 119}
+        - {x: 36, y: 139}
+        - {x: 7, y: 139}
+        - {x: -25, y: 107}
+        - {x: -81, y: 102}
+        - {x: -176, y: -2}
+        - {x: -176, y: -54}
+        - {x: -126, y: -78}
+        - {x: -133, y: -126}
+        - {x: -130, y: -137}
+        - {x: -115, y: -142}
+        - {x: -106, y: -144}
+        - {x: -78, y: -149}
+        - {x: -59, y: -148}
+        - {x: -11, y: -152}
+        - {x: -7, y: -179}
+        - {x: 1, y: -181}
+        - {x: 56, y: -181}
+        - {x: 91, y: -169}
+        - {x: 139, y: -102}
+        - {x: 143, y: -88}
+    - name: VikingJump_12FPS_400x400Frames_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 185, y: -115}
+        - {x: 187, y: -112}
+        - {x: 187, y: -104}
+        - {x: 170, y: 6}
+        - {x: 127, y: 15}
+        - {x: 161, y: 101}
+        - {x: 163, y: 194}
+        - {x: 156, y: 200}
+        - {x: 116, y: 200}
+        - {x: 86, y: 178}
+        - {x: 98, y: 153}
+        - {x: 70, y: 155}
+        - {x: 27, y: 142}
+        - {x: 0, y: 132}
+        - {x: 1, y: 148}
+        - {x: -1, y: 155}
+        - {x: -9, y: 152}
+        - {x: -46, y: 121}
+        - {x: -41, y: 103}
+        - {x: -80, y: 87}
+        - {x: -101, y: 77}
+        - {x: -130, y: 30}
+        - {x: -164, y: -55}
+        - {x: -152, y: -106}
+        - {x: -167, y: -154}
+        - {x: -167, y: -166}
+        - {x: -165, y: -171}
+        - {x: -130, y: -179}
+        - {x: -78, y: -177}
+        - {x: -32, y: -160}
+        - {x: -18, y: -184}
+        - {x: -5, y: -184}
+        - {x: 86, y: -142}
+        - {x: 98, y: -125}
+        - {x: 125, y: -122}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
