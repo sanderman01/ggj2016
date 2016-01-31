@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour {
             foreach(Challenge c in activeLevelParts[i].challenge)
             {
                 c.attachedGameObject = activeLevelParts[i].gameObject;
-                float timer = 0.25f * totalSize;
+                float timer = 0.25f * totalSize;//TODO:zit in deze regel de bug? Opnieuw checken na slape 
                 c.timeLeftUntilInput += timer;
                 c.timeLeftUntilJudgment += timer;
                 challengeList.Add(c);
@@ -64,8 +64,7 @@ public class LevelManager : MonoBehaviour {
             if (generated > 10)
             {
                 r = Random.Range(0, count);
-            }
-            //LevelPart newLevelPart = Instantiate(temp[r]);          
+            }         
             GameObject g = (GameObject)Instantiate(temp[r].gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
             LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
             generated += newLevelPart.size;
