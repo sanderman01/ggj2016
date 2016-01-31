@@ -82,19 +82,16 @@ public class GameLoopManager : MonoBehaviour {
                             }
                         }
                     }
-                    if(charac.CurrentState == PlayerCharacter.CharacterState.Running)
+                    bool dancingInput = Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID + 1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID + 1)) > 0.9;
+                    if (charac.CurrentState == PlayerCharacter.CharacterState.Running && dancingInput)
                     {
-                        if (Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID+1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID+1)) > 0.9)
-                        {
-                            playerDatas[i].ritualCasting = true;
-
-
-
-                        }
-                        else
-                        {
-                            playerDatas[i].ritualCasting = false;
-                        }
+                        playerDatas[i].ritualCasting = true;
+                        charac.StartDancing();
+                    }
+                    else if(charac.CurrentState == PlayerCharacter.CharacterState.Dancing && !dancingInput)
+                    {
+                        playerDatas[i].ritualCasting = false;
+                        charac.StopDancing();
                     }
 
                     //Remove outdated objects
