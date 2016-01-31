@@ -13,8 +13,9 @@ public class Challenge : MonoBehaviour {
     public float xOffset = 0; //X coordinate offset from start of gameObject that the challenge is judged at
 
     public InputType requiredInput = InputType.None; //Button to push/action to take to clear this challenge
-    public float timeLeftUntilInput = 9.5f; //Once this hits 0, you can start inputting the required command
-    public float timeLeftUntilJudgment = 10f; //Once this hits 0, you will fail the challenge unless it is already cleared
+    public float timeLeftUntilInput = 0f; //Once this hits 0, you can start inputting the required command
+    public float timeLeftUntilJudgment = 0.5f; //Once this hits 0, you will fail the challenge unless it is already cleared
+    public float timeLeftUntilObjectGone = 1.25f; //hax
     public bool cleared = false; //Set to true once the user enters the right input
     public bool failed = false; //Set to true once the judgment timing expires and it's not cleared yet
 
