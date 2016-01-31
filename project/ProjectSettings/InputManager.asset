@@ -7,11 +7,11 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Jump1
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: 1
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
@@ -23,11 +23,11 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Jump2
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: 2
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
@@ -39,11 +39,11 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Jump3
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: 3
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
@@ -55,11 +55,11 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Jump4
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: 4
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
@@ -71,11 +71,11 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Slide1
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: q
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
@@ -87,11 +87,11 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Slide2
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: w
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
@@ -103,11 +103,11 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Slide3
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: e
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
@@ -119,11 +119,11 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Slide4
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
@@ -135,11 +135,11 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Confirm
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: return
-    altNegativeButton:
+    altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
     dead: 0.001
@@ -151,11 +151,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Ritual1Left
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton:
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -167,11 +167,11 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Ritual1Right
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -183,11 +183,11 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Ritual2Left
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -199,11 +199,11 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Ritual2Right
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -215,11 +215,11 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Ritual3Left
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -231,11 +231,11 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Ritual3Right
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -247,11 +247,11 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Ritual4Left
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -263,11 +263,11 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Ritual4Right
-    descriptiveName:
-    descriptiveNegativeName:
-    negativeButton:
-    positiveButton: r
-    altNegativeButton:
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
     altPositiveButton: 9
     gravity: 1000
     dead: 0.001
@@ -277,3 +277,19 @@ InputManager:
     type: 2
     axis: 8
     joyNum: 4
+  - serializedVersion: 3
+    m_Name: Reset
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: escape
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0

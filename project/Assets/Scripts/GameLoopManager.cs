@@ -21,7 +21,7 @@ public class GameLoopManager : MonoBehaviour {
 	void Start () {
         InitializeGame(4);
         happyCombo = 4 * playerCount;
-        StartGame();       
+        //StartGame();       
 	}
     void OnGUI()
     {
@@ -59,12 +59,19 @@ public class GameLoopManager : MonoBehaviour {
 
                     if (challenge.requiredInput != Challenge.InputType.None)
                     {
-                        //Check for failure
-                        if (!challenge.failed)
+                        //Judge challenge
+                        if (!challenge.failed && !challenge.cleared)
                         {
                             if (challenge.timeLeftUntilJudgment <= 0)
                             {
-                                if (!challenge.cleared)
+
+                                if (JudgePlayerState(challenge, i)) //SUCCESS
+                                {
+                                    challenge.Clear();
+                                    combo++;
+                                    if (combo >= happyCombo) loki.SetMood(Loki.Mood.Happy, true);
+                                }
+                                else //FAILURE
                                 {
                                     challenge.Fail();
                                     loki.SetMood(Loki.Mood.Angry, true);
@@ -72,28 +79,13 @@ public class GameLoopManager : MonoBehaviour {
                                 }
                             }
                         }
+                    }
 
-                        //Check for input
-                        if (!challenge.failed && !challenge.cleared)
-                        {
-                            if (challenge.timeLeftUntilInput <= 0)
-                            {
-                                Static.LogOnceVerbose("Challenge timing!", "challenge");
-                                if (CheckIfInputEntered(i, challenge.requiredInput))
-                                {
-                                    challenge.Clear();
-                                    combo++;
-                                    if (combo >= happyCombo) loki.SetMood(Loki.Mood.Happy, true);
-                                }
-                            }
-                        }
-
-                        //Remove outdated objects
-                        if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
-                        {
-                            data.challenges.Remove(challenge);
-                            j--; //Make sure the removal doesn't affect the for loop
-                        }
+                    //Remove outdated objects
+                    if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
+                    {
+                        data.challenges.Remove(challenge);
+                        j--; //Make sure the removal doesn't affect the for loop
                     }
                 }
             }
@@ -112,6 +104,7 @@ public class GameLoopManager : MonoBehaviour {
             GameObject character = (GameObject)Instantiate(playerPrefab, new Vector3(playerData.xPos,playerData.yPos + 1f,0), Quaternion.identity);
             PlayerCharacter charaScript = (PlayerCharacter)character.GetComponent("PlayerCharacter");
             charaScript.playerID = i;
+            playerData.character = charaScript;
 
             //Generate level
             LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
@@ -138,14 +131,6 @@ public class GameLoopManager : MonoBehaviour {
         Static.Log("Game started!");
     }
 
-    bool CheckIfInputEntered(int playerID, Challenge.InputType inputType)
-    {
-        int bn = playerID + 1; //Button number; 1-based, as opposed to playerID which is 0-based
-        if (Input.GetButton("Jump" + bn) && inputType == Challenge.InputType.Jump) return true;
-        if (Input.GetButton("Slide" + bn) && inputType == Challenge.InputType.Duck) return true;
-        return false;
-    }
-
     void SetChallengePosition(Challenge challenge, int playerID)
     {
         GameObject go = challenge.attachedGameObject;
@@ -160,5 +145,21 @@ public class GameLoopManager : MonoBehaviour {
         {
             Static.WarningOnce("Null object on challenge for player " + playerID, "nullobject");
         }
+    }
+
+    bool JudgePlayerState(Challenge challenge, int playerID)
+    {
+        //playerDatas[i].character._currentState
+        PlayerCharacter.CharacterState state = playerDatas[playerID].character.CurrentState;
+        switch(challenge.requiredInput)
+        {
+            case Challenge.InputType.Jump:
+                if (state == PlayerCharacter.CharacterState.Jumping) return true;
+                break;
+            case Challenge.InputType.Duck:
+                if (state == PlayerCharacter.CharacterState.Sliding) return true;
+                break;
+        }
+        return false;
     }
 }

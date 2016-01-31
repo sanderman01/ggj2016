@@ -6,6 +6,7 @@ public class PlayerData {
     public List<Challenge> challenges;
     public float xPos = -7.37f; //X location of player
     public float yPos = 0; //Y location of player
+    public PlayerCharacter character;
 
     public PlayerData(int playerID)
     {
