@@ -14,6 +14,7 @@ public class GameLoopManager : MonoBehaviour {
     bool running = false;
 
     private int combo = 0;
+    private int ritualCount=0;
     private int happyCombo = 15; //The required combo to make Loki happy
     private float extraDetectionDistance = 0.7f; //The distance from the center of the sprite at which judgment should start
 
@@ -45,6 +46,7 @@ public class GameLoopManager : MonoBehaviour {
             for (int i = 0; i < playerCount; i++)
             {
                 PlayerData data = playerDatas[i];
+                PlayerCharacter charac = playerDatas[i].character;
 
                 //Handle challenges
                 for (int j = 0; j < data.challenges.Count; j++)
@@ -80,6 +82,20 @@ public class GameLoopManager : MonoBehaviour {
                             }
                         }
                     }
+                    if(charac.CurrentState == PlayerCharacter.CharacterState.Running)
+                    {
+                        if (Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID+1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID+1)) > 0.9)
+                        {
+                            playerDatas[i].ritualCasting = true;
+
+
+
+                        }
+                        else
+                        {
+                            playerDatas[i].ritualCasting = false;
+                        }
+                    }
 
                     //Remove outdated objects
                     if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
@@ -88,6 +104,19 @@ public class GameLoopManager : MonoBehaviour {
                         j--; //Make sure the removal doesn't affect the for loop
                     }
                 }
+            }
+            int casters=0;
+            foreach(PlayerData pd in playerDatas)
+            {
+                if(pd.ritualCasting)
+                {
+                    casters++;
+                }
+            }
+            if(casters == 4)
+            {
+                ritualCount++;
+                Debug.Log("ALL Praise the Loki " + ritualCount);
             }
         }
 	}
