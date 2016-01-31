@@ -21,7 +21,7 @@ public class PlayerCharacter : MonoBehaviour
     [System.Serializable]
     private enum CharacterState { Running, Jumping, Falling, Sliding, Dancing }
     [SerializeField]
-    private CharacterState _currentState = CharacterState.Running;
+    public CharacterState _currentState = CharacterState.Running;
 
     private HashSet<Collision2D> _currentCollisions = new HashSet<Collision2D>();
 
