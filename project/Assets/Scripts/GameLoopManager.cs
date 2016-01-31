@@ -146,7 +146,7 @@ public class GameLoopManager : MonoBehaviour {
         {
             float targetX = playerDatas[playerID].xPos + extraDetectionDistance; //At judgment time, its pos is equal to player pos
             targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
-            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            //targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
         else
