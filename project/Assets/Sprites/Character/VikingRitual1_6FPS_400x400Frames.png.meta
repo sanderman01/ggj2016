@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 02153810ae9e99549af959edc643f997
+timeCreated: 1454235221
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: VikingRitual1_6FPS_400x400Frames_0
+    21300002: VikingRitual1_6FPS_400x400Frames_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: VikingRitual1_6FPS_400x400Frames_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: -147}
+        - {x: 89, y: -141}
+        - {x: 80, y: -165}
+        - {x: 75, y: -186}
+        - {x: 88, y: -200}
+        - {x: 118, y: -200}
+        - {x: 169, y: -188}
+        - {x: 169, y: -142}
+        - {x: 166, y: -131}
+        - {x: 167, y: -68}
+        - {x: 102, y: 71}
+        - {x: 103, y: 112}
+        - {x: 96, y: 167}
+        - {x: 75, y: 171}
+        - {x: -13, y: 171}
+        - {x: -42, y: 170}
+        - {x: -38, y: 118}
+        - {x: -57, y: 68}
+        - {x: -66, y: 26}
+        - {x: -61, y: -62}
+        - {x: -98, y: -126}
+        - {x: -98, y: -200}
+        - {x: 13, y: -200}
+        - {x: 18, y: -189}
+        - {x: 16, y: -134}
+        - {x: 68, y: -150}
+      - - {x: 149, y: -59}
+        - {x: 151, y: -61}
+        - {x: 154, y: -60}
+        - {x: 154, y: -56}
+        - {x: 152, y: -54}
+        - {x: 149, y: -55}
+    - name: VikingRitual1_6FPS_400x400Frames_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: -139}
+        - {x: 90, y: -192}
+        - {x: 99, y: -200}
+        - {x: 142, y: -200}
+        - {x: 180, y: -189}
+        - {x: 180, y: -170}
+        - {x: 162, y: -159}
+        - {x: 156, y: -106}
+        - {x: 172, y: -87}
+        - {x: 102, y: 79}
+        - {x: 62, y: 166}
+        - {x: 40, y: 198}
+        - {x: -58, y: 198}
+        - {x: -77, y: 157}
+        - {x: -66, y: 53}
+        - {x: -56, y: -107}
+        - {x: -105, y: -168}
+        - {x: -105, y: -200}
+        - {x: -8, y: -200}
+        - {x: 1, y: -197}
+        - {x: 0, y: -176}
+        - {x: 35, y: -138}
+        - {x: 87, y: -147}
+      - - {x: -79, y: -120}
+        - {x: -82, y: -123}
+        - {x: -83, y: -129}
+        - {x: -81, y: -131}
+        - {x: -79, y: -131}
+        - {x: -76, y: -127}
+        - {x: -76, y: -121}
+      - - {x: 149, y: -54}
+        - {x: 151, y: -56}
+        - {x: 154, y: -55}
+        - {x: 154, y: -51}
+        - {x: 152, y: -49}
+        - {x: 149, y: -50}
+      - - {x: -59, y: 73}
+        - {x: -56, y: 74}
+        - {x: -56, y: 77}
+        - {x: -59, y: 78}
+        - {x: -61, y: 76}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
