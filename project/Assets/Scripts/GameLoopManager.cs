@@ -6,9 +6,11 @@ public class GameLoopManager : MonoBehaviour {
 
     const float CHALLENGE_REMOVAL_LIMIT = 5f; //Once a challenge has passed for this long, it is destroyed
     const float CHALLENGE_ADDITION_LIMIT = 10f; //There needs to be at least X seconds of challenges; if not, generate new ones
+    const float RITUAL_REQUIREMENT = 10f;
 
     public Loki loki;
     public Text timerText;
+    public LokiProgress lokiProgress;
 
     public int playerCount = 4;
     public GameObject playerPrefab;
@@ -89,6 +91,8 @@ public class GameLoopManager : MonoBehaviour {
                             }
                         }
                     }
+
+                    //Dancing
                     bool dancingInput = Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID + 1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID + 1)) > 0.9;
                     if (charac.CurrentState == PlayerCharacter.CharacterState.Running && dancingInput)
                     {
@@ -124,6 +128,8 @@ public class GameLoopManager : MonoBehaviour {
 
                 VictoryCheck();
             }
+            //Loki feedback
+            lokiProgress.ShowProgress(ritualTime / RITUAL_REQUIREMENT);
 
             //Make sure there is enough level left
             for (int i = 0; i < playerCount; i++)
@@ -267,7 +273,7 @@ public class GameLoopManager : MonoBehaviour {
 
     void VictoryCheck()
     {
-        if (ritualTime > 5 && running)
+        if (ritualTime > RITUAL_REQUIREMENT && running)
         {
             running = false;
             Menus.Victory();
