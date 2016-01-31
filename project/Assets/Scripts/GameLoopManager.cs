@@ -20,11 +20,22 @@ public class GameLoopManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         InitializeGame(4);
-        StartGame();
+        StartGame();       
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    void OnGUI()
+    {
+        Reset();
+    }
+    private void Reset()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(0);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (running)
         {
             float seconds = Time.deltaTime;
@@ -124,6 +135,7 @@ public class GameLoopManager : MonoBehaviour {
     {
         int bn = playerID + 1; //Button number; 1-based, as opposed to playerID which is 0-based
         if (Input.GetButton("Jump" + bn) && inputType == Challenge.InputType.Jump) return true;
+        if (Input.GetButton("Fire" + bn) && inputType == Challenge.InputType.Duck) return true;
         return false;
     }
 
