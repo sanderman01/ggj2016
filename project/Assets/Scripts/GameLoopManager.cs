@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class GameLoopManager : MonoBehaviour {
 
-    const float CHALLENGE_REMOVAL_LIMIT = 5f;
+    const float CHALLENGE_REMOVAL_LIMIT = 1.5f;
 
     public Loki loki;
 
@@ -20,7 +20,7 @@ public class GameLoopManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        InitializeGame(1);
+        InitializeGame(4);
         happyCombo = 4 * playerCount;
         //StartGame();       
 	}
@@ -97,7 +97,7 @@ public class GameLoopManager : MonoBehaviour {
                     //Remove outdated objects
                     if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
                     {
-                        data.challenges.Remove(challenge);
+                        DestroyChallenge(challenge, i);
                         j--; //Make sure the removal doesn't affect the for loop
                     }
                 }
@@ -120,6 +120,23 @@ public class GameLoopManager : MonoBehaviour {
 
     public void InitializeGame(int playerCount = 4)
     {
+        Static.Log("Initializing game for " + playerCount + " players.");
+        //Remove existing challenges and objects and shizzle
+        if (playerDatas != null)
+        {
+            for (int i = 0; i < playerDatas.Count; i++)
+            {
+                if (playerDatas[i].character != null)
+                    Destroy(playerDatas[i].character.gameObject);
+                for(int j = 0; j < playerDatas[i].challenges.Count; j++)
+                {
+                    DestroyChallenge(playerDatas[i].challenges[j], playerDatas[i].playerID);
+                    j--; //Make sure for loop keeps working despite removal of element
+                }
+            }
+        }
+
+        //Generate new stuff
         this.playerCount = playerCount;
         playerDatas = new List<PlayerData>();
         for(int i = 0; i < playerCount; i++)
@@ -187,5 +204,20 @@ public class GameLoopManager : MonoBehaviour {
                 break;
         }
         return false;
+    }
+
+    void DestroyChallenge(Challenge challenge, int playerID)
+    {
+        if (playerDatas.Count > playerID)
+        {
+            PlayerData data = playerDatas[playerID];
+            if (data != null)
+            {
+                data.challenges.Remove(challenge);
+            }
+        }
+
+        Destroy(challenge.attachedGameObject);
+        Destroy(challenge.gameObject);
     }
 }

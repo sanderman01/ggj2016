@@ -16,9 +16,9 @@ public class Menus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         titleSprite.enabled = false;
@@ -31,6 +31,13 @@ public class Menus : MonoBehaviour {
                 {
                     gameLoopManager.StartGame();
                     menuState = MenuState.Playing;
+                }
+                else
+                {
+                    if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.Alpha1)) gameLoopManager.InitializeGame(1);
+                    if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.Alpha2)) gameLoopManager.InitializeGame(2);
+                    if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.Alpha3)) gameLoopManager.InitializeGame(3);
+                    if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.Alpha4)) gameLoopManager.InitializeGame(4);
                 }
                 break;
             case MenuState.GameOver:
