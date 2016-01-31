@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class GameLoopManager : MonoBehaviour {
 
-    const float CHALLENGE_REMOVAL_LIMIT = 1.5f;
+    const float CHALLENGE_REMOVAL_LIMIT = 5f; //Once a challenge has passed for this long, it is destroyed
+    const float CHALLENGE_ADDITION_LIMIT = 10f; //There needs to be at least X seconds of challenges; if not, generate new ones
 
     public Loki loki;
 
@@ -55,6 +56,7 @@ public class GameLoopManager : MonoBehaviour {
                     //Change time
                     challenge.timeLeftUntilInput -= seconds;
                     challenge.timeLeftUntilJudgment -= seconds;
+                    challenge.timeLeftUntilObjectGone -= seconds;
                     
                     //Set position of challenge object
                     SetChallengePosition(challenge, i);
@@ -115,6 +117,18 @@ public class GameLoopManager : MonoBehaviour {
                 ritualCount++;
                 Debug.Log("ALL Praise the Loki " + ritualCount);
             }
+
+            //Make sure there is enough level left
+            for (int i = 0; i < playerCount; i++)
+            {
+                int challengeIndex = playerDatas[i].challenges.Count - 1;
+                Challenge finalChallenge = playerDatas[i].challenges[challengeIndex];
+                if (finalChallenge.timeLeftUntilJudgment < CHALLENGE_ADDITION_LIMIT)
+                {
+                    //Generate more level
+                    GenerateLevel(playerDatas[i], finalChallenge.timeLeftUntilObjectGone);
+                }
+            }
         }
 	}
 
@@ -150,12 +164,7 @@ public class GameLoopManager : MonoBehaviour {
             playerData.character = charaScript;
 
             //Generate level
-            LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
-            lm.CreateNewLevel(playerData.yPos);
-            foreach(Challenge c in lm.challengeList)
-            {
-                playerData.challenges.Add(c);
-            }
+            GenerateLevel(playerData, 0);
                        
             //Store player data
             playerDatas.Add(playerData);
@@ -219,5 +228,20 @@ public class GameLoopManager : MonoBehaviour {
 
         Destroy(challenge.attachedGameObject);
         Destroy(challenge.gameObject);
+    }
+
+    void GenerateLevel(PlayerData playerData, float offset)
+    {
+        LevelManager lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
+        bool starter = true;
+        if (offset > 0) starter = false;
+        lm.CreateNewLevel(playerData.yPos, starter);
+        foreach (Challenge c in lm.challengeList)
+        {
+            c.timeLeftUntilInput += offset;
+            c.timeLeftUntilJudgment += offset;
+            c.timeLeftUntilObjectGone += offset;
+            playerData.challenges.Add(c);
+        }
     }
 }

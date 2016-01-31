@@ -8,9 +8,9 @@ public class LevelManager : MonoBehaviour {
     public List<LevelPart> activeLevelParts = new List<LevelPart>();
     public LevelPart emptySection;
 
-    public void CreateNewLevel(float yPos)
+    public void CreateNewLevel(float yPos, bool starter = true)
     {
-        CreateLevel(levelParts, yPos);
+        CreateLevel(levelParts, yPos, starter);
         AddToChallengeList(activeLevelParts);
     }
 
@@ -26,13 +26,14 @@ public class LevelManager : MonoBehaviour {
                 
                 c.timeLeftUntilInput += timer;
                 c.timeLeftUntilJudgment += timer;
+                c.timeLeftUntilObjectGone += timer;
                 challengeList.Add(c);
             }
             totalSize += activeLevelParts[i].size;
         }
     }
 
-    private void CreateLevel(List<LevelPart> levelParts, float yPos)
+    private void CreateLevel(List<LevelPart> levelParts, float yPos, bool starter = true)
     {
         activeLevelParts.Clear();
         challengeList.Clear();
@@ -49,13 +50,16 @@ public class LevelManager : MonoBehaviour {
         }
 
         //Add starter level parts
-        for (int i = 0; i < 2; i++)
+        if (starter)
         {
-            GameObject g = (GameObject)Instantiate(emptySection.gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
-            LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
-            generated += newLevelPart.size;
-            g.transform.parent = newLevelPart.transform;
-            activeLevelParts.Add(newLevelPart);
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject g = (GameObject)Instantiate(emptySection.gameObject, new Vector3(100, yPos, 0), Quaternion.identity);
+                LevelPart newLevelPart = (LevelPart)g.GetComponent("LevelPart");
+                generated += newLevelPart.size;
+                g.transform.parent = newLevelPart.transform;
+                activeLevelParts.Add(newLevelPart);
+            }
         }
 
         //Add random level parts
