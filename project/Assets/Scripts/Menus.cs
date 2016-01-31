@@ -32,6 +32,13 @@ public class Menus : MonoBehaviour {
                     gameLoopManager.StartGame();
                     menuState = MenuState.Playing;
                 }
+                else
+                {
+                    if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha1)) gameLoopManager.InitializeGame(1);
+                    if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha2)) gameLoopManager.InitializeGame(2);
+                    if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha3)) gameLoopManager.InitializeGame(3);
+                    if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha4)) gameLoopManager.InitializeGame(4);
+                }
                 break;
             case MenuState.GameOver:
                 gameOverSprite.enabled = true;
