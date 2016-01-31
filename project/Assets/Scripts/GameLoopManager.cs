@@ -28,7 +28,7 @@ public class GameLoopManager : MonoBehaviour {
 	void Start () {
         InitializeGame(4);
         happyCombo = 4 * playerCount;
-        //StartGame();       
+        //StartGame();
 	}
     void OnGUI()
     {
@@ -63,7 +63,7 @@ public class GameLoopManager : MonoBehaviour {
                     challenge.timeLeftUntilInput -= seconds;
                     challenge.timeLeftUntilJudgment -= seconds;
                     challenge.timeLeftUntilObjectGone -= seconds;
-                    
+
                     //Set position of challenge object
                     SetChallengePosition(challenge, i);
 
@@ -148,7 +148,7 @@ public class GameLoopManager : MonoBehaviour {
         float tMinutes = Mathf.Floor(timer / 60);
         float tSeconds = timer - tMinutes * 60;
         tSeconds = (float)System.Math.Round(tSeconds, 2);
-        string secondsText = System.Convert.ToString(tSeconds);
+        string secondsText = System.Convert.ToString(tSeconds).Length > 1 ? System.Convert.ToString(tSeconds) : System.Convert.ToString(tSeconds) + "0";
         if (tSeconds < 10) secondsText = "0" + secondsText;
         timerText.text = System.Convert.ToString(tMinutes) + ":" + secondsText;
 
@@ -180,7 +180,7 @@ public class GameLoopManager : MonoBehaviour {
         this.playerCount = playerCount;
         playerDatas = new List<PlayerData>();
         for(int i = 0; i < playerCount; i++)
-        { 
+        {
             //Create player
             PlayerData playerData = new PlayerData(i);
             playerData.yPos = i * 4f - 8f;
@@ -191,7 +191,7 @@ public class GameLoopManager : MonoBehaviour {
 
             //Generate level
             GenerateLevel(playerData, 0);
-                       
+
             //Store player data
             playerDatas.Add(playerData);
 
