@@ -140,4 +140,29 @@ public class PlayerCharacter : MonoBehaviour
             ToRunning();
         }
     }
+
+    public void StartDancing()
+    {
+        if (_grounded)
+        {
+            // Change state
+            _currentState = CharacterState.Dancing;
+            // Disable upper body collider
+            _upperBody.enabled = false;
+            // Play Sound
+            // TODO
+            // Play Animation
+            _animator.Play("dancing");
+        }
+    }
+
+    public void StopDancing()
+    {
+        // If we are sliding
+        if (_currentState == CharacterState.Dancing)
+        {
+            // Go back to running state
+            ToRunning();
+        }
+    }
 }
