@@ -4,13 +4,16 @@ using System.Collections.Generic;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    private const float MoveSpeed = 0; // This is temporary
+    private const float MoveSpeed = 1f;
 
     private const float JumpVelocity = 15;
     private const float FallVelocity = -20;
     private const float StumbleTime = 1f;
 
     private float stumbleTimer = 0f;
+
+    private const float XMinBound = -10;
+    private const float XMaxBound = 10;
 
     public int playerID;
 
@@ -65,6 +68,7 @@ public class PlayerCharacter : MonoBehaviour
         GroundCheck();
         FallingCheck();
         RunningCheck();
+        BoundsCheck();
 
         // This horizontal movement segment is temporary.
         // Normally the character should not move much horizontally unless he gets knocked down and to the left due to a fail, 
@@ -190,5 +194,12 @@ public class PlayerCharacter : MonoBehaviour
     public void StopStumbling()
     {
         ToRunning();
+    }
+
+    private void BoundsCheck()
+    {
+        Vector2 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, XMinBound, XMaxBound);
+        transform.position = pos;
     }
 }

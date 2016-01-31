@@ -6,9 +6,11 @@ public class GameLoopManager : MonoBehaviour {
 
     const float CHALLENGE_REMOVAL_LIMIT = 5f; //Once a challenge has passed for this long, it is destroyed
     const float CHALLENGE_ADDITION_LIMIT = 10f; //There needs to be at least X seconds of challenges; if not, generate new ones
+    const float RITUAL_REQUIREMENT = 10f;
 
     public Loki loki;
     public Text timerText;
+    public LokiProgress lokiProgress;
 
     public int playerCount = 4;
     public GameObject playerPrefab;
@@ -26,7 +28,7 @@ public class GameLoopManager : MonoBehaviour {
 	void Start () {
         InitializeGame(4);
         happyCombo = 4 * playerCount;
-        //StartGame();       
+        //StartGame();
 	}
     void OnGUI()
     {
@@ -61,7 +63,7 @@ public class GameLoopManager : MonoBehaviour {
                     challenge.timeLeftUntilInput -= seconds;
                     challenge.timeLeftUntilJudgment -= seconds;
                     challenge.timeLeftUntilObjectGone -= seconds;
-                    
+
                     //Set position of challenge object
                     SetChallengePosition(challenge, i);
 
@@ -89,6 +91,8 @@ public class GameLoopManager : MonoBehaviour {
                             }
                         }
                     }
+
+                    //Dancing
                     bool dancingInput = Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID + 1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID + 1)) > 0.9;
                     if (charac.CurrentState == PlayerCharacter.CharacterState.Running && dancingInput)
                     {
@@ -124,6 +128,8 @@ public class GameLoopManager : MonoBehaviour {
 
                 VictoryCheck();
             }
+            //Loki feedback
+            lokiProgress.ShowProgress(ritualTime / RITUAL_REQUIREMENT);
 
             //Make sure there is enough level left
             for (int i = 0; i < playerCount; i++)
@@ -142,7 +148,7 @@ public class GameLoopManager : MonoBehaviour {
         float tMinutes = Mathf.Floor(timer / 60);
         float tSeconds = timer - tMinutes * 60;
         tSeconds = (float)System.Math.Round(tSeconds, 2);
-        string secondsText = System.Convert.ToString(tSeconds);
+        string secondsText = System.Convert.ToString(tSeconds).Length > 1 ? System.Convert.ToString(tSeconds) : System.Convert.ToString(tSeconds) + "0";
         if (tSeconds < 10) secondsText = "0" + secondsText;
         timerText.text = System.Convert.ToString(tMinutes) + ":" + secondsText;
 
@@ -174,7 +180,7 @@ public class GameLoopManager : MonoBehaviour {
         this.playerCount = playerCount;
         playerDatas = new List<PlayerData>();
         for(int i = 0; i < playerCount; i++)
-        { 
+        {
             //Create player
             PlayerData playerData = new PlayerData(i);
             playerData.yPos = i * 4f - 8f;
@@ -185,7 +191,7 @@ public class GameLoopManager : MonoBehaviour {
 
             //Generate level
             GenerateLevel(playerData, 0);
-                       
+
             //Store player data
             playerDatas.Add(playerData);
 
@@ -267,7 +273,7 @@ public class GameLoopManager : MonoBehaviour {
 
     void VictoryCheck()
     {
-        if (ritualTime > 5 && running)
+        if (ritualTime > RITUAL_REQUIREMENT && running)
         {
             running = false;
             Menus.Victory();
