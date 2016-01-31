@@ -17,7 +17,7 @@ public class GameLoopManager : MonoBehaviour {
     bool running = false;
 
     private int combo = 0;
-    private int ritualCount=0;
+    private float ritualTime = 0f;
     private int happyCombo = 15; //The required combo to make Loki happy
     private float extraDetectionDistance = 0.7f; //The distance from the center of the sprite at which judgment should start
     private float timer = 0f;
@@ -116,10 +116,10 @@ public class GameLoopManager : MonoBehaviour {
                     casters++;
                 }
             }
-            if(casters == 4)
+            if(casters == playerCount)
             {
-                ritualCount++;
-                Debug.Log("ALL Praise the Loki " + ritualCount);
+                ritualTime += seconds;
+                Static.VerboseLog("ALL Praise the Loki " + ritualTime);
             }
 
             //Make sure there is enough level left
@@ -150,6 +150,7 @@ public class GameLoopManager : MonoBehaviour {
         Static.Log("Initializing game for " + playerCount + " players.");
 
         timer = 0f;
+        ritualTime = 0f;
 
         //Remove existing challenges and objects and shizzle
         if (playerDatas != null)
