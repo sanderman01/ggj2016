@@ -10,9 +10,12 @@ public class Loki : MonoBehaviour {
     }
 
     public SpriteRenderer lokiRenderer;
+    public SpriteRenderer textRenderer;
     public Sprite neutralSprite;
     public Sprite angrySprite;
     public Sprite happySprite;
+    public Sprite text;
+    public Sprite angryText;
 
     private float angryTime = 0f;
     private float happyTime = 0f;
@@ -57,10 +60,12 @@ public class Loki : MonoBehaviour {
     public void SetMood(Mood targetMood, bool refresh)
     {
         Sprite newSprite = neutralSprite;
+        Sprite newText = text;
         switch(targetMood)
         {
             case Mood.Angry:
                 newSprite = angrySprite;
+                newText = angryText;
                 if (refresh) angryTime = angryDuration;
                 break;
             case Mood.Happy:
@@ -70,5 +75,6 @@ public class Loki : MonoBehaviour {
         }
 
         lokiRenderer.sprite = newSprite;
+        textRenderer.sprite = newText;
     }
 }
