@@ -91,26 +91,24 @@ public class GameLoopManager : MonoBehaviour {
                             }
                         }
                     }
-
-                    //Dancing
-                    bool dancingInput = Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID + 1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID + 1)) > 0.9;
-                    if (charac.CurrentState == PlayerCharacter.CharacterState.Running && dancingInput)
-                    {
-                        playerDatas[i].ritualCasting = true;
-                        charac.StartDancing();
-                    }
-                    else if(charac.CurrentState == PlayerCharacter.CharacterState.Dancing && !dancingInput)
-                    {
-                        playerDatas[i].ritualCasting = false;
-                        charac.StopDancing();
-                    }
-
                     //Remove outdated objects
                     if (challenge.timeLeftUntilJudgment <= -CHALLENGE_REMOVAL_LIMIT)
                     {
                         DestroyChallenge(challenge, i);
                         j--; //Make sure the removal doesn't affect the for loop
                     }
+                }
+                //Dancing
+                bool dancingInput = Input.GetAxis(string.Format("Ritual{0}Left", i + 1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", i + 1)) > 0.9;
+                if (charac.CurrentState == PlayerCharacter.CharacterState.Running && dancingInput)
+                {
+                    playerDatas[i].ritualCasting = true;
+                    charac.StartDancing();
+                }
+                else if (charac.CurrentState == PlayerCharacter.CharacterState.Dancing && !dancingInput)
+                {
+                    playerDatas[i].ritualCasting = false;
+                    charac.StopDancing();
                 }
             }
             int casters=0;
