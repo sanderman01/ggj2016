@@ -256,7 +256,7 @@ RectTransform:
   m_Children:
   - {fileID: 487165884}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -406,7 +406,7 @@ GameObject:
   - 212: {fileID: 732517181}
   - 114: {fileID: 732517183}
   m_Layer: 0
-  m_Name: Loki
+  m_Name: LokiCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1.4518479, y: 1.6794128, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 9
 --- !u!114 &732517183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,10 +465,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c584ca1d407c5014b989b50e78b17f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 732517181}
+  lokiRenderer: {fileID: 732517181}
+  textRenderer: {fileID: 1758904724}
   neutralSprite: {fileID: 21300000, guid: 79ee8adc4b0c30944bd4f36d829eab19, type: 3}
   angrySprite: {fileID: 21300000, guid: 70f9abb15d11c514b93737e36d359f4d, type: 3}
   happySprite: {fileID: 21300000, guid: a3879cfd1e0172d45a86584bec6ca97e, type: 3}
+  text: {fileID: 21300000, guid: 89f7313a64e9b27409e2902d9bf8b2e1, type: 3}
+  angryText: {fileID: 21300000, guid: 1237c003a1e584f4daf4bbddf076d07e, type: 3}
   angryDuration: 1
   happyDuration: 1
 --- !u!1 &869284309
@@ -513,7 +516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1114772697
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +592,7 @@ Transform:
   m_LocalScale: {x: 25, y: 17, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &1114772702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,7 +821,65 @@ Transform:
   m_LocalScale: {x: 1.815093, y: 1.9815704, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
+--- !u!1 &1758904723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1758904725}
+  - 212: {fileID: 1758904724}
+  m_Layer: 0
+  m_Name: LokiText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1758904724
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1758904723}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 89f7313a64e9b27409e2902d9bf8b2e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1758904725
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1758904723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.08, y: 4.97, z: -4}
+  m_LocalScale: {x: 1.1648324, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1811606834
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +921,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &2022447444
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,4 +979,4 @@ Transform:
   m_LocalScale: {x: 1.6598375, y: 1.825873, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
