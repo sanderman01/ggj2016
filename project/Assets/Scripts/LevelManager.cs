@@ -25,10 +25,7 @@ public class LevelManager : MonoBehaviour {
                 float timer = 0.25f * totalSize;//TODO:zit in deze regel de bug? Opnieuw checken na slape 
                 
                 c.timeLeftUntilInput += timer;
-                Debug.Log("Pre: " + c.timeLeftUntilJudgment);
-                
                 c.timeLeftUntilJudgment += timer;
-                Debug.Log("Post: " + c.timeLeftUntilJudgment);
                 challengeList.Add(c);
             }
             totalSize += activeLevelParts[i].size;
