@@ -13,7 +13,6 @@ public class FloorHider : MonoBehaviour {
         else
         {
             Object test = Resources.Load("redbox2");
-            Debug.Log(test);
             Sprite spr = Resources.Load<Sprite>("redbox2");
             sr.sprite = spr;
         }

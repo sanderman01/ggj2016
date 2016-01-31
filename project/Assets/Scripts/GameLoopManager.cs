@@ -20,6 +20,7 @@ public class GameLoopManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         InitializeGame(4);
+        happyCombo = 4 * playerCount;
         StartGame();       
 	}
     void OnGUI()
@@ -135,7 +136,7 @@ public class GameLoopManager : MonoBehaviour {
     {
         int bn = playerID + 1; //Button number; 1-based, as opposed to playerID which is 0-based
         if (Input.GetButton("Jump" + bn) && inputType == Challenge.InputType.Jump) return true;
-        if (Input.GetButton("Fire" + bn) && inputType == Challenge.InputType.Duck) return true;
+        if (Input.GetButton("Slide" + bn) && inputType == Challenge.InputType.Duck) return true;
         return false;
     }
 
@@ -146,7 +147,7 @@ public class GameLoopManager : MonoBehaviour {
         {
             float targetX = playerDatas[playerID].xPos + extraDetectionDistance; //At judgment time, its pos is equal to player pos
             targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
-            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            //targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
         else

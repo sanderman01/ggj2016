@@ -43,8 +43,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         // Temporary controls
         if (Input.GetButton("Jump" + (playerID + 1))) StartJump();
-        if (Input.GetKeyDown(KeyCode.DownArrow)) StartSlide();
-        if (Input.GetKeyUp(KeyCode.DownArrow)) StopSlide();
+        if (Input.GetButtonDown("Slide" + (playerID + 1))) StartSlide();
+        if (Input.GetButtonUp("Slide" + (playerID + 1))) StopSlide();
     }
 
     void FixedUpdate()
