@@ -8,6 +8,9 @@ public class PlayerCharacter : MonoBehaviour
 
     private const float JumpVelocity = 15;
     private const float FallVelocity = -20;
+    private const float StumbleTime = 1f;
+
+    private float stumbleTimer = 0f;
 
     public int playerID;
 
@@ -40,10 +43,21 @@ public class PlayerCharacter : MonoBehaviour
 
     void Update()
     {
-        // Temporary controls
-        if (Input.GetButton("Jump" + (playerID + 1))) StartJump();
-        if (Input.GetButtonDown("Slide" + (playerID + 1))) StartSlide();
-        if (Input.GetButtonUp("Slide" + (playerID + 1))) StopSlide();
+        if (CurrentState == CharacterState.Running)
+        {
+            // Temporary controls
+            if (Input.GetButton("Jump" + (playerID + 1))) StartJump();
+            if (Input.GetButtonDown("Slide" + (playerID + 1))) StartSlide();
+        }
+        else if (CurrentState == CharacterState.Sliding)
+        {
+            if (Input.GetButtonUp("Slide" + (playerID + 1))) StopSlide();
+        }
+        else if (CurrentState == CharacterState.Stumbling)
+        {
+            stumbleTimer -= Time.deltaTime;
+            if (stumbleTimer <= 0) StopStumbling();
+        }
     }
 
     void FixedUpdate()
@@ -170,6 +184,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         _currentState = CharacterState.Stumbling;
         _animator.Play("stumbling");
+        stumbleTimer = StumbleTime;
     }
 
     public void StopStumbling()
