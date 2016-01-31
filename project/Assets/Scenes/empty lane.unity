@@ -293,6 +293,14 @@ Prefab:
       propertyPath: _groundCheckPosition
       value: 
       objectReference: {fileID: 1116635896}
+    - target: {fileID: 480496, guid: 177dec159cc42e148a4f1353ba74267b, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483722, guid: 177dec159cc42e148a4f1353ba74267b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177dec159cc42e148a4f1353ba74267b, type: 2}
   m_IsPrefabParent: 0
