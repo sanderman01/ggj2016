@@ -82,6 +82,7 @@ public class GameLoopManager : MonoBehaviour {
                                 else //FAILURE
                                 {
                                     challenge.Fail();
+                                    data.character.StartStumbling();
                                     loki.SetMood(Loki.Mood.Angry, true);
                                     combo = 0;
                                 }
