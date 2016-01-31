@@ -100,7 +100,7 @@ public class GameLoopManager : MonoBehaviour {
         }
 	}
 
-    void InitializeGame(int playerCount = 4)
+    public void InitializeGame(int playerCount = 4)
     {
         this.playerCount = playerCount;
         playerDatas = new List<PlayerData>();
@@ -123,10 +123,16 @@ public class GameLoopManager : MonoBehaviour {
                        
             //Store player data
             playerDatas.Add(playerData);
+
+            //Fix positions
+            for (int j = 0; j < playerData.challenges.Count; j++)
+            {
+                SetChallengePosition(playerData.challenges[j], i);
+            }
         }
     }
 
-    void StartGame()
+    public void StartGame()
     {
         running = true;
         Static.Log("Game started!");
@@ -147,7 +153,7 @@ public class GameLoopManager : MonoBehaviour {
         {
             float targetX = playerDatas[playerID].xPos + extraDetectionDistance; //At judgment time, its pos is equal to player pos
             targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
-            //targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
         else
