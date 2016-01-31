@@ -15,6 +15,7 @@ public class GameLoopManager : MonoBehaviour {
 
     private int combo = 0;
     private int happyCombo = 15; //The required combo to make Loki happy
+    private float extraDetectionDistance = 0.7f; //The distance from the center of the sprite at which judgment should start
 
 	// Use this for initialization
 	void Start () {
@@ -131,9 +132,9 @@ public class GameLoopManager : MonoBehaviour {
         GameObject go = challenge.attachedGameObject;
         if (go != null)
         {
-            float targetX = playerDatas[playerID].xPos; //At judgment time, its pos is equal to player pos
+            float targetX = playerDatas[playerID].xPos + extraDetectionDistance; //At judgment time, its pos is equal to player pos
             targetX += challenge.timeLeftUntilJudgment * movementPerSecond; //Move it away from player depending on judgment time
-            //targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
+            targetX -= challenge.xOffset; //Adjust for location on object where challenge occurs
             go.transform.localPosition = new Vector3(targetX, go.transform.localPosition.y, go.transform.localPosition.z);
         }
         else
