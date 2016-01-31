@@ -19,7 +19,7 @@ public class PlayerCharacter : MonoBehaviour
     private Collider2D _upperBody;
 
     [System.Serializable]
-    public enum CharacterState { Running, Jumping, Falling, Sliding, Dancing }
+    public enum CharacterState { Running, Jumping, Falling, Sliding, Dancing, Stumbling }
     [SerializeField]
     private CharacterState _currentState = CharacterState.Running;
     public CharacterState CurrentState { get { return _currentState; } }
@@ -164,5 +164,16 @@ public class PlayerCharacter : MonoBehaviour
             // Go back to running state
             ToRunning();
         }
+    }
+
+    public void StartStumbling()
+    {
+        _currentState = CharacterState.Stumbling;
+        _animator.Play("stumbling");
+    }
+
+    public void StopStumbling()
+    {
+        ToRunning();
     }
 }
