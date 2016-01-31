@@ -19,11 +19,10 @@ public class PlayerCharacter : MonoBehaviour
     private Collider2D _upperBody;
 
     [System.Serializable]
-    private enum CharacterState { Running, Jumping, Falling, Sliding, Dancing }
+    public enum CharacterState { Running, Jumping, Falling, Sliding, Dancing }
     [SerializeField]
-    public CharacterState _currentState = CharacterState.Running;
-
-    private HashSet<Collision2D> _currentCollisions = new HashSet<Collision2D>();
+    private CharacterState _currentState = CharacterState.Running;
+    public CharacterState CurrentState { get { return _currentState; } }
 
     [SerializeField]
     private Transform _groundCheckPosition;
