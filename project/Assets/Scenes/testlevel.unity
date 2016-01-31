@@ -213,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4c8f7104cbcf1814baf62eeab6b3079a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,8 +224,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 635948101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.020000458, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 8.28, y: -7.51, z: -6}
+  m_LocalScale: {x: 1.2043992, y: 1.0364995, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -283,8 +283,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732517180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.02, z: -5}
-  m_LocalScale: {x: 1, y: 2.4, z: 1}
+  m_LocalPosition: {x: 8.4, y: 0.78, z: -5}
+  m_LocalScale: {x: 1.0723794, y: 1.7594527, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -300,9 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 732517181}
-  neutralSprite: {fileID: 21300000, guid: c5c9a8e5dbd89e64eb769cf02427e405, type: 3}
-  angrySprite: {fileID: 21300000, guid: be5fcb430251c6d4ead55b0ad612ade0, type: 3}
-  happySprite: {fileID: 21300000, guid: 2301127dda2718d49985dff793367336, type: 3}
+  neutralSprite: {fileID: 21300000, guid: 79ee8adc4b0c30944bd4f36d829eab19, type: 3}
+  angrySprite: {fileID: 21300000, guid: 70f9abb15d11c514b93737e36d359f4d, type: 3}
+  happySprite: {fileID: 21300000, guid: a3879cfd1e0172d45a86584bec6ca97e, type: 3}
   angryDuration: 1
   happyDuration: 1
 --- !u!1 &869284309
