@@ -142,7 +142,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Stumble
+  m_Name: stumbling
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -154,7 +154,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6820832aaf0d1824794f4ac59c4f8513, type: 2}
+  m_Motion: {fileID: 7400000, guid: c882905053a0c6a488cfb1591edf9a38, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

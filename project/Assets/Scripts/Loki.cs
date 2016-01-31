@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Loki : MonoBehaviour {
 
@@ -10,7 +9,7 @@ public class Loki : MonoBehaviour {
         Happy
     }
 
-    public SpriteRenderer renderer;
+    public SpriteRenderer lokiRenderer;
     public Sprite neutralSprite;
     public Sprite angrySprite;
     public Sprite happySprite;
@@ -70,6 +69,6 @@ public class Loki : MonoBehaviour {
                 break;
         }
 
-        renderer.sprite = newSprite;
+        lokiRenderer.sprite = newSprite;
     }
 }
