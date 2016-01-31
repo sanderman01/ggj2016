@@ -6,17 +6,21 @@ public class Menus : MonoBehaviour {
     {
         Starting = 0,
         Playing = 1,
-        GameOver = 2
+        GameOver = 2,
+        Victory = 3
     }
 
     public GameLoopManager gameLoopManager;
     public SpriteRenderer titleSprite;
     public SpriteRenderer gameOverSprite;
+    public SpriteRenderer victorySprite;
     public MenuState menuState = MenuState.Starting;
+
+    private static Menus instance;
 
 	// Use this for initialization
 	void Start () {
-
+        Menus.instance = this;
 	}
 
 	// Update is called once per frame
@@ -45,4 +49,10 @@ public class Menus : MonoBehaviour {
                 break;
         }
 	}
+
+    public static void Victory()
+    {
+        instance.victorySprite.enabled = true;
+        instance.menuState = MenuState.Victory;
+    }
 }

@@ -120,6 +120,8 @@ public class GameLoopManager : MonoBehaviour {
             {
                 ritualTime += seconds;
                 Static.VerboseLog("ALL Praise the Loki " + ritualTime);
+
+                VictoryCheck();
             }
 
             //Make sure there is enough level left
@@ -259,6 +261,15 @@ public class GameLoopManager : MonoBehaviour {
             c.timeLeftUntilJudgment += offset;
             c.timeLeftUntilObjectGone += offset;
             playerData.challenges.Add(c);
+        }
+    }
+
+    void VictoryCheck()
+    {
+        if (ritualTime > 5 && running)
+        {
+            running = false;
+            Menus.Victory();
         }
     }
 }
