@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    private const float MoveSpeed = 1f;
+    private const float MoveSpeed = 0f;
 
     private const float JumpVelocity = 15;
     private const float FallVelocity = -20;
@@ -68,7 +68,7 @@ public class PlayerCharacter : MonoBehaviour
         GroundCheck();
         FallingCheck();
         RunningCheck();
-        BoundsCheck();
+        //BoundsCheck();
 
         // This horizontal movement segment is temporary.
         // Normally the character should not move much horizontally unless he gets knocked down and to the left due to a fail, 
