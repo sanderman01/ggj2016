@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameLoopManager : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class GameLoopManager : MonoBehaviour {
     const float CHALLENGE_ADDITION_LIMIT = 10f; //There needs to be at least X seconds of challenges; if not, generate new ones
 
     public Loki loki;
+    public Text timerText;
 
     public int playerCount = 4;
     public GameObject playerPrefab;
@@ -18,6 +20,7 @@ public class GameLoopManager : MonoBehaviour {
     private int ritualCount=0;
     private int happyCombo = 15; //The required combo to make Loki happy
     private float extraDetectionDistance = 0.7f; //The distance from the center of the sprite at which judgment should start
+    private float timer = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +45,7 @@ public class GameLoopManager : MonoBehaviour {
         if (running)
         {
             float seconds = Time.deltaTime;
+            timer += seconds;
 
             //Evaluate player levels
             for (int i = 0; i < playerCount; i++)
@@ -130,11 +134,23 @@ public class GameLoopManager : MonoBehaviour {
                 }
             }
         }
+
+        //Update timer
+        float tMinutes = Mathf.Floor(timer / 60);
+        float tSeconds = timer - tMinutes * 60;
+        tSeconds = (float)System.Math.Round(tSeconds, 2);
+        string secondsText = System.Convert.ToString(tSeconds);
+        if (tSeconds < 10) secondsText = "0" + secondsText;
+        timerText.text = System.Convert.ToString(tMinutes) + ":" + secondsText;
+
 	}
 
     public void InitializeGame(int playerCount = 4)
     {
         Static.Log("Initializing game for " + playerCount + " players.");
+
+        timer = 0f;
+
         //Remove existing challenges and objects and shizzle
         if (playerDatas != null)
         {
