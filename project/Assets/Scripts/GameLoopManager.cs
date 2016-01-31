@@ -84,10 +84,11 @@ public class GameLoopManager : MonoBehaviour {
                     }
                     if(charac.CurrentState == PlayerCharacter.CharacterState.Running)
                     {
-                        if (Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID)) > 0.9)
+                        if (Input.GetAxis(string.Format("Ritual{0}Left", playerDatas[i].playerID+1)) > 0.9 && Input.GetAxis(string.Format("Ritual{0}Right", playerDatas[i].playerID+1)) > 0.9)
                         {
                             playerDatas[i].ritualCasting = true;
-                            Debug.Log("Praise the Loki " + ritualCount);
+
+
 
                         }
                         else
